@@ -1,8 +1,9 @@
 package com.ruoyi.modules.monitor;
 
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import de.codecentric.boot.admin.server.config.EnableAdminServer;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 /**
  * 监控中心
@@ -10,7 +11,7 @@ import de.codecentric.boot.admin.server.config.EnableAdminServer;
  * @author ruoyi
  */
 @EnableAdminServer
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class RuoYiMonitorApplication
 {
     public static void main(String[] args)
