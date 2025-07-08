@@ -1,16 +1,18 @@
 package com.ruoyi.job.service;
 
-import java.util.List;
-import org.quartz.SchedulerException;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.ruoyi.common.core.exception.job.TaskException;
 import com.ruoyi.job.domain.SysJob;
+import org.quartz.SchedulerException;
+
+import java.util.List;
 
 /**
  * 定时任务调度信息信息 服务层
  * 
  * @author ruoyi
  */
-public interface ISysJobService
+public interface ISysJobService extends IService<SysJob>
 {
     /**
      * 获取quartz调度器的计划任务

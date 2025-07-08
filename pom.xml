@@ -21,7 +21,7 @@
         <spring-cloud.version>2023.0.3</spring-cloud.version>
         <spring-cloud-alibaba.version>2023.0.1.2</spring-cloud-alibaba.version>
         <spring-boot-admin.version>3.3.5</spring-boot-admin.version>
-        <mybatis-spring.version>3.0.3</mybatis-spring.version>
+<!--        <mybatis-spring.version>3.0.3</mybatis-spring.version>-->
         <mybatis-plus.version>3.5.5</mybatis-plus.version>
         <kaptcha.version>2.3.3</kaptcha.version>
         <pagehelper.boot.version>2.1.0</pagehelper.boot.version>
@@ -35,6 +35,9 @@
         <poi.version>4.1.2</poi.version>
         <springdoc.version>2.6.0</springdoc.version>
         <transmittable-thread-local.version>2.14.4</transmittable-thread-local.version>
+        <!-- 适配Spring Boot 3.x的版本 -->
+        <pagehelper.version>2.1.0</pagehelper.version>
+        <jsqlparser.version>4.7</jsqlparser.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -83,23 +86,42 @@
             </dependency>
 
             <!-- pagehelper 分页插件 -->
-            <dependency>
-                <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper-spring-boot-starter</artifactId>
-                <version>${pagehelper.boot.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>mybatis-spring</artifactId>
-                        <groupId>org.mybatis</groupId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.github.pagehelper</groupId>-->
+<!--                <artifactId>pagehelper-spring-boot-starter</artifactId>-->
+<!--                <version>${pagehelper.boot.version}</version>-->
+<!--                <exclusions>-->
+<!--                    <exclusion>-->
+<!--                        <artifactId>mybatis-spring</artifactId>-->
+<!--                        <groupId>org.mybatis</groupId>-->
+<!--                    </exclusion>-->
+<!--                </exclusions>-->
+<!--            </dependency>-->
 
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis-spring</artifactId>
-                <version>${mybatis-spring.version}</version>
-            </dependency>
+                <dependency>
+                    <groupId>com.github.pagehelper</groupId>
+                    <artifactId>pagehelper-spring-boot-starter</artifactId>
+                    <version>${pagehelper.version}</version>
+                    <exclusions>
+                        <exclusion>
+                            <artifactId>mybatis-spring</artifactId>
+                            <groupId>org.mybatis</groupId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+
+                <!-- 显式引入新版jsqlparser -->
+                <dependency>
+                    <groupId>com.github.jsqlparser</groupId>
+                    <artifactId>jsqlparser</artifactId>
+                    <version>${jsqlparser.version}</version>
+                </dependency>
+
+<!--            <dependency>-->
+<!--                <groupId>org.mybatis</groupId>-->
+<!--                <artifactId>mybatis-spring</artifactId>-->
+<!--                <version>${mybatis-spring.version}</version>-->
+<!--            </dependency>-->
 
             <!-- io常用工具类 -->
             <dependency>
@@ -233,24 +255,24 @@
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.baomidou</groupId>-->
-<!--            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>-->
-<!--            <version>${mybatis-plus.version}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.baomidou</groupId>-->
-<!--            <artifactId>mybatis-plus-generator</artifactId>-->
-<!--            <version>${mybatis-plus.version}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.projectlombok</groupId>-->
-<!--            <artifactId>lombok</artifactId>-->
-<!--            <version>1.18.24</version>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
 
     </dependencies>
 

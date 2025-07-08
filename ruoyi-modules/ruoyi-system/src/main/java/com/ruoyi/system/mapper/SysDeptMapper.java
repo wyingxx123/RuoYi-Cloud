@@ -1,15 +1,19 @@
 package com.ruoyi.system.mapper;
 
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.ruoyi.system.api.domain.SysDept;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * 部门管理 数据层
  * 
  * @author ruoyi
  */
-public interface SysDeptMapper
+@Mapper
+public interface SysDeptMapper extends BaseMapper<SysDept>
 {
     /**
      * 查询部门管理数据

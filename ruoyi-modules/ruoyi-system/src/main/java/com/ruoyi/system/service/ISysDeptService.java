@@ -1,15 +1,17 @@
 package com.ruoyi.system.service;
 
-import java.util.List;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.ruoyi.system.api.domain.SysDept;
 import com.ruoyi.system.domain.vo.TreeSelect;
+
+import java.util.List;
 
 /**
  * 部门管理 服务层
  * 
  * @author ruoyi
  */
-public interface ISysDeptService
+public interface ISysDeptService extends IService<SysDept>
 {
     /**
      * 查询部门管理数据

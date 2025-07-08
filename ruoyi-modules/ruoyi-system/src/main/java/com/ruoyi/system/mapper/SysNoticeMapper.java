@@ -1,14 +1,18 @@
 package com.ruoyi.system.mapper;
 
-import java.util.List;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.ruoyi.system.domain.SysNotice;
+import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * 通知公告表 数据层
  * 
  * @author ruoyi
  */
-public interface SysNoticeMapper
+@Mapper
+public interface SysNoticeMapper extends BaseMapper<SysNotice>
 {
     /**
      * 查询公告信息

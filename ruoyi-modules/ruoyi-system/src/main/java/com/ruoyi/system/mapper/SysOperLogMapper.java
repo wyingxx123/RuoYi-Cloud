@@ -1,14 +1,18 @@
 package com.ruoyi.system.mapper;
 
-import java.util.List;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.ruoyi.system.api.domain.SysOperLog;
+import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * 操作日志 数据层
  * 
  * @author ruoyi
  */
-public interface SysOperLogMapper
+@Mapper
+public interface SysOperLogMapper extends BaseMapper<SysOperLog>
 {
     /**
      * 新增操作日志

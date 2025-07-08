@@ -1,8 +1,8 @@
 package com.ruoyi.system.service;
 
-import java.util.Set;
-
 import com.ruoyi.system.api.domain.SysUser;
+
+import java.util.Set;
 
 /**
  * 权限信息 服务层
